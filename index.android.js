@@ -1,40 +1,43 @@
 import React from 'react';
-import { Text, AppRegistry, View } from 'react-native';
+import { Text, AppRegistry, View, Image, TouchableOpacity } from 'react-native';
 
 //Formatações
 const Estilos =  {
-    principal:{
-        flex: 1, //1:1
-        backgroundColor: 'cornflowerblue'
+    principal: {
+        flex:1,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-
-    topo:{
-        flex: 2,//2:11
-        backgroundColor: 'brown'
+    botao: {
+        backgroundColor: '#538530',
+        paddingVertical: 10,
+        paddingHorizontal: 40,
+        marginTop: 20
     },
-    conteudo:{
-        flex: 8,//8:11
-        backgroundColor: 'yellowgreen'
-    },
-    rodape:{
-        flex: 1,//1:11
-        backgroundColor: 'orangered'
+    textoBotao: {
+        color: '#fff',
+        fontsize: 16,
+        fontWeight: 'bold'
     }
-
 };
 
+const botaoPressionado = () => {
+
+}
 
 //Criar  o componente
 const App = () => {
 
-  const { principal, topo, conteudo, rodape } = Estilos;
+  const { principal, botao, textoBotao } = Estilos;
 
   return(
       <View style={principal}>
-      <Text style={ topo }>Topo</Text>
-      <Text style={ conteudo }>Conteudo</Text>
-      <Text style={ rodape }>Rodape</Text>
+          <Image source={require('./imgs/logo.png')}/>
+          <TouchableOpacity style={botao}>
+              <Text style={textoBotao}>Nova frase</Text>
+          </TouchableOpacity>
       </View>
+
     );
 };
 
